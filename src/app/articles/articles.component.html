@@ -1,0 +1,14 @@
+<ul>
+    <li *ngFor="let article of articles; index as i;">
+        <a routerLink="/article/{{article.id}}">{{ article.titre }}</a> <i> by {{ article.auteur }}</i>
+        <span *ngFor="let tag of article.tags">&nbsp;#{{tag}}</span>
+        <button (click)="deleteArticle(i)">supprimer</button>
+    </li>
+</ul>
+
+<input  [(ngModel)]="titre" type="text" name="titre" placeholder="titre"><br>
+<input  [(ngModel)]="auteur" type="text" name="auteur" placeholder="auteur"><br>
+<textarea  [(ngModel)]="corps" name="corps" cols="30" rows="10"></textarea><br>
+<input  [(ngModel)]="tags" type="text" name="tags" placeholder="tags"><br>
+<button (click)="createArticle()">créer</button>
+

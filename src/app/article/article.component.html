@@ -1,0 +1,6 @@
+<div *ngIf="article">
+    <h2>{{article.titre}}</h2>
+    <i>by {{ article.auteur }}</i> -- le {{ article.date | date }}
+    <p>{{ article.corps }}</p>
+</div>
+<a routerLink="/">retour à la liste</a>
